@@ -1,0 +1,61 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.*.local
+
+# Dependency directories
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# MongoDB memory server cache
+server/.cache/
+server/node_modules/.cache/
+**/mongodb-memory-server/**
+
+# Build output
+dist/
+build/
+client/dist/
+server/dist/
+
+# IDE/editor config
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# OS-specific
+Thumbs.db
+ehthumbs.db
+
+# Misc
+*.tgz
+*.zip
+*.bak
+
+# Debugging
+*.pid
+*.seed
+*.pid.lock
+
+# Git
+*.orig
+
+# Coverage
+coverage/
+.nyc_output/
+
+# React/Vite
+client/.vite/
+client/.vite-cache/
+
+# Test results
+test-output/
+junit.xml

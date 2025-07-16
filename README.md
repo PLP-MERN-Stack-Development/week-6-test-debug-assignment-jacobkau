@@ -1,88 +1,179 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19946520&assignment_repo_type=AssignmentRepo)
-# Testing and Debugging MERN Applications
+# MERN BUG TRACKER   
 
-This assignment focuses on implementing comprehensive testing strategies for a MERN stack application, including unit testing, integration testing, and end-to-end testing, along with debugging techniques.
+## 📝 Project Overview
+This project implements comprehensive testing strategies for a MERN (MongoDB, Express, React, Node.js) stack application, including unit testing, integration testing, and end-to-end testing. The project also incorporates various debugging techniques to ensure application reliability.
 
-## Assignment Overview
+## 🎯 Objective
+The primary goal is to ensure application reliability through:
+- Comprehensive test coverage (unit, integration, e2e)
+- Effective debugging techniques
+- Performance monitoring
+- Error handling strategies
 
-You will:
-1. Set up testing environments for both client and server
-2. Write unit tests for React components and server functions
-3. Implement integration tests for API endpoints
-4. Create end-to-end tests for critical user flows
-5. Apply debugging techniques for common MERN stack issues
+## 📂 Project Structure
 
-## Project Structure
-
+### Client Directory
 ```
-mern-testing/
-├── client/                 # React front-end
-│   ├── src/                # React source code
-│   │   ├── components/     # React components
-│   │   ├── tests/          # Client-side tests
-│   │   │   ├── unit/       # Unit tests
-│   │   │   └── integration/ # Integration tests
-│   │   └── App.jsx         # Main application component
-│   └── cypress/            # End-to-end tests
-├── server/                 # Express.js back-end
-│   ├── src/                # Server source code
-│   │   ├── controllers/    # Route controllers
-│   │   ├── models/         # Mongoose models
-│   │   ├── routes/         # API routes
-│   │   └── middleware/     # Custom middleware
-│   └── tests/              # Server-side tests
-│       ├── unit/           # Unit tests
-│       └── integration/    # Integration tests
-├── jest.config.js          # Jest configuration
-└── package.json            # Project dependencies
+mem-bug-tracker/
+├── client/
+│   ├── cypress/                # End-to-end tests
+│   │   ├── e2e/
+│   │   │   └── auth.cy.js      # Authentication tests
+│   │   └── cypress.config.js   # Cypress configuration
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/             # Static assets
+│   │   ├── components/         # React components
+│   │   │   ├── Button/
+│   │   │   ├── ErrorBoundary.jpx  # Error boundary component
+│   │   │   └── UserProfile.jpx    # User profile component
+│   │   ├── mocks/              # Mock data and handlers
+│   │   ├── tests/              # Test files
+│   │   │   ├── integration/    # Integration tests
+│   │   │   └── unit/           # Unit tests
+│   │   ├── App.css             # Main styles
+│   │   ├── App.jsx             # Main App component
+│   │   ├── app.text.js         # App tests
+│   │   ├── main.jsx            # Application entry point
+│   │   └── setupTests.js       # Test setup configuration
+│   ├── .gitignore
+│   ├── eslint.config.js        # ESLint configuration
+│   ├── index.html
+│   ├── jest.setup.js           # Jest setup
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── README.md
+│   ├── vite.config.js          # Vite configuration
+│   └── vitest.config.js        # Vitest configuration
 ```
 
-## Getting Started
+### Server Directory
+```
+server/
+├── config/                     # Configuration files
+│   ├── config.js               # Main configuration
+│   └── db.js                   # Database configuration
+├── src/
+│   ├── middleware/             # Express middleware
+│   │   ├── auth.js             # Authentication middleware
+│   │   ├── config.js
+│   │   └── errorHandler.js     # Error handling middleware
+│   ├── models/                 # Database models
+│   │   ├── post.js             # Post model
+│   │   └── user.js             # User model
+│   ├── routes/                 # API routes
+│   │   ├── authRoutes.js       # Authentication routes
+│   │   └── postRoutes.js       # Post routes
+│   ├── utils/                  # Utility functions
+│   │   ├── auth.js             # Auth utilities
+│   │   ├── config.js
+│   │   ├── validation.js       # Validation utilities
+│   │   └── validation.test.jsx # Validation tests
+│   ├── app.js                  # Express application
+│   └── tests/                  # Test files
+│       ├── integration/        # Integration tests
+│       └── unit/               # Unit tests
+├── .env                        # Environment variables
+├── jest.config.js              # Jest configuration
+├── package-lock.json
+├── package.json
+├── README.md
+├── server.js                   # Server entry point
+└── Week6-Assignment.md         # Assignment details
+```
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week6-Assignment.md` file
-4. Explore the starter code and existing tests
-5. Complete the tasks outlined in the assignment
+## 🛠️ Setup Instructions
 
-## Files Included
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   ```
 
-- `Week6-Assignment.md`: Detailed assignment instructions
-- Starter code for a MERN application with basic test setup:
-  - Sample React components with test files
-  - Express routes with test files
-  - Jest and testing library configurations
-  - Example tests for reference
+2. **Install dependencies**:
+   ```bash
+   # From the root directory
+   npm run install-all
+   ```
 
-## Requirements
+3. **Set up the test database**:
+   ```bash
+   # In the server directory
+   npm run setup-test-db
+   ```
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Basic understanding of testing concepts
+4. **Configure environment variables**:
+   - Create a `.env` file in the server directory based on `.env.example`
 
-## Testing Tools
+## 🧪 Testing Commands
 
-- Jest: JavaScript testing framework
-- React Testing Library: Testing utilities for React
-- Supertest: HTTP assertions for API testing
-- Cypress/Playwright: End-to-end testing framework
-- MongoDB Memory Server: In-memory MongoDB for testing
+### Run all tests
+```bash
+npm test
+```
 
-## Submission
+### Run specific test types
+```bash
+# Unit tests
+npm run test:unit
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+# Integration tests
+npm run test:integration
 
-1. Complete all required tests (unit, integration, and end-to-end)
-2. Achieve at least 70% code coverage for unit tests
-3. Document your testing strategy in the README.md
-4. Include screenshots of your test coverage reports
-5. Demonstrate debugging techniques in your code
+# End-to-end tests
+npm run test:e2e
+```
 
-## Resources
+### Test coverage
+```bash
+# Generate coverage report
+npm run test:coverage
+```
 
-- [Jest Documentation](https://jestjs.io/docs/getting-started)
-- [React Testing Library Documentation](https://testing-library.com/docs/react-testing-library/intro/)
-- [Supertest Documentation](https://github.com/visionmedia/supertest)
-- [Cypress Documentation](https://docs.cypress.io/)
-- [MongoDB Testing Best Practices](https://www.mongodb.com/blog/post/mongodb-testing-best-practices) 
+## 📋 Testing Strategy
+
+### 1. Unit Testing
+- **Client**: React components, custom hooks, utility functions
+- **Server**: Middleware, utility functions, model methods
+- **Coverage Goal**: Minimum 70% coverage for critical paths
+
+### 2. Integration Testing
+- API endpoint testing with Supertest
+- Database operation testing with test database
+- Component integration with API calls
+- Authentication flow testing
+
+### 3. End-to-End Testing
+- Critical user flows (registration, login, CRUD operations)
+- Navigation and routing
+- Error handling and edge cases
+- Visual regression testing
+
+## 🐛 Debugging Techniques Implemented
+1. **Server-side**:
+   - Comprehensive logging strategy
+   - Global error handler middleware
+   - Performance monitoring
+
+2. **Client-side**:
+   - React Error Boundaries
+   - Debug logging
+   - Browser developer tools integration
+
+## ✅ Expected Outcomes
+- Comprehensive test suite covering all critical paths
+- High code coverage reports
+- Improved application reliability
+- Well-documented debugging procedures
+
+## 📄 Documentation
+- Test coverage reports available in `/coverage` after running tests
+- Debugging procedures documented in code comments
+- Testing strategy documented in this README
+
+## 📷 Screenshots
+- Test coverage reports (see attached `client-test.png` and `image.png`)
+
+![server](mern-bug-tracker/server-test.png) 
+![client](mern-bug-tracker/client-test.png)
+
+- Example test runs

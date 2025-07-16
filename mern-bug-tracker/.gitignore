@@ -10,20 +10,20 @@ yarn-error.log*
 .env.*.local
 
 # Dependency directories
-mern-bug-tracker/node_modules/
-mern-bug-tracker/client/node_modules/
-mern-bug-tracker/server/node_modules/
+node_modules/
+client/node_modules/
+server/node_modules/
 
 # MongoDB Memory Server cache
-mern-bug-tracker/server/.cache/
-mern-bug-tracker/server/node_modules/.cache/
+server/.cache/
+server/node_modules/.cache/
 **/mongodb-memory-server/**
 
 # Build output
 dist/
 build/
-mern-bug-tracker/client/dist/
-mern-bug-tracker/server/dist/
+client/dist/
+server/dist/
 
 # IDE/editor config
 .vscode/
@@ -53,8 +53,8 @@ coverage/
 .nyc_output/
 
 # React/Vite
-mern-bug-tracker/client/.vite/
-mern-bug-tracker/client/.vite-cache/
+client/.vite/
+client/.vite-cache/
 
 # Test results
 test-output/
